@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+class Person {
+public:
+    int id;
+    string name;
+
+    Person() {
+        cout << "Enter id: ";
+        cin >> this->id;
+        cout << "Enter name: ";
+        cin >> this->name;
+    }
+};
+
+class Student : public Person {
+public:
+    int mark[5];
+
+    Student() {
+        for (int i = 0; i < 5; i++) {
+            cout << "Enter mark " << i + 1 << ": ";
+            cin >> this->mark[i];
+        }
+    }
+
+    int total() {
+        int sum = 0;
+        for (int i = 0; i < 5; i++) {
+            sum += this->mark[i];
+        }
+        return sum;
+    }
+
+    void display() {
+        cout << "Student ID: " << this->id << endl;
+        cout << "Student Name: " << this->name << endl;
+        cout << "Total Marks: " << this->total() << endl;
+    }
+};
+
+class Employee : public Person {
+public:
+    int hra, bp, ta;
+
+    Employee() {
+        cout << "Enter HRA: ";
+        cin >> hra;
+        cout << "Enter BP: ";
+        cin >> bp;
+        cout << "Enter TA: ";
+        cin >> ta;
+    }
+
+    void display() {
+        cout << "Employee ID: " << this->id << endl;
+        cout << "Employee Name: " << this->name << endl;
+        cout << "HRA: " << this->hra << endl;
+        cout << "BP: " << this->bp << endl;
+        cout << "TA: " << this->ta << endl;
+    }
+};
+
+int main() {
+    cout << "MENU" << endl;
+    cout << "1. Student" << endl;
+    cout << "2. Employee" << endl;
+    int ch;
+    cin >> ch;
+
+    if (ch == 1) {
+        Student s[4];
+        for (int i = 0; i < 4; i++) {
+            s[i].display();
+        }
+    } else {
+        Employee e[4];
+        for (int i = 0; i < 4; i++) {
+            e[i].display();
+        }
+    }
+
+    return 0;
+}

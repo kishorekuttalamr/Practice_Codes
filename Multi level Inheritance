@@ -1,0 +1,30 @@
+
+#include<iostream>
+using namespace std;
+class One{
+    public:
+        int x;
+};
+class Two{
+    public:
+        int y;
+};
+class Three:public One,public Two{
+    public:
+        int z;
+        Three(int x, int y, int z)
+        {
+            this->x=x;
+            this->y=y;
+            this->z=z;
+        }
+        void product()
+        {
+            cout<<this->x*this->y*z;
+        }
+};
+int main()
+{
+    Three z(10,20,30);
+    z.product();
+}

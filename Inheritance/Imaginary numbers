@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class Complex
+{
+public:
+    int real, img;
+    Complex(int real, int img)
+    {
+        this->real = real;
+        this->img = img;
+    }
+    void sum(Complex y)
+    {
+        int real_sum = this->real + y.real;
+        int img_sum = this->img + y.img;
+        cout << real_sum << "+" << img_sum << "i" << endl;
+    }
+    void difference(Complex y)
+    {
+        int real_diff = this->real - y.real;
+        int img_diff = this->img - y.img;
+        cout << real_diff << "+" << img_diff << "i" << endl;
+    }
+    void product(Complex y)
+    {
+        int real_pro = this->real * y.real;
+        int img_pro = this->img * y.img;
+        cout << real_pro << "+" << img_pro << "i" << endl;
+    }
+};
+int main()
+{
+    int real1, img1, real2, img2;
+    cout << "Enter the real and imaginary parts for the first complex number: ";
+    cin >> real1 >> img1;
+    cout << "Enter the real and imaginary parts for the second complex number: ";
+    cin >> real2 >> img2;
+
+    Complex x(real1, img1);
+    Complex y(real2, img2);
+
+    x.sum(y);
+    x.difference(y);
+    x.product(y);
+}

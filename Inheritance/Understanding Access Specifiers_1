@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class Art
+{
+private:
+    char d;
+    double f;
+
+public:
+    int a, b;
+    float c;
+    void get()
+    {
+        cout << "enter 2 int values , 1 char value  and 2 double value";
+        cin >> this->a >> this->b >> this->d >> this->c >> this->f;
+    }
+    void display()
+    {
+        cout << this->a << this->b << this->d << this->c << this->f;
+    }
+};
+int main()
+{
+    Art a;
+    a.get();
+    a.display();
+}

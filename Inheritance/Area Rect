@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+class Area
+{
+public:
+    int len, bre;
+    Area()
+    {
+        cout << "enter length" << endl;
+        cin >> len;
+        cout << "enter breadth" << endl;
+        cin >> bre;
+    }
+    double returnArea()
+    {
+        return len * bre;
+    }
+};
+int main()
+{
+    Area a;
+    cout << a.returnArea();
+}

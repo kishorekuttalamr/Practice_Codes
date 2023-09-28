@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class Distance
+{
+public:
+    int feet, inch;
+
+    Distance(int feet, int inch)
+    {
+        this->feet = feet;
+        this->inch = inch;
+    }
+
+    Distance adddistance(Distance d2)
+    {
+        Distance result(0, 0);
+
+        result.inch = this->inch + d2.inch;
+
+        result.feet = this->feet + d2.feet;
+
+        while (result.inch >= 12)
+        {
+            result.inch -= 12;
+            result.feet += 1;
+        }
+
+        return result;
+    }
+
+    void display()
+    {
+        cout << feet << " feet " << inch << " inch";
+    }
+};
+
+int main()
+{
+
+    Distance Distance1(5, 9);
+    Distance Distance2(7, 10);
+
+    Distance sum = Distance1.adddistance(Distance2);
+
+    cout << "The sum of two distances will be ";
+    sum.display();
+    cout << endl;
+
+    return 0;
+}

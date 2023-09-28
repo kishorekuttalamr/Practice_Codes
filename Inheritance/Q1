@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+class Circle
+{
+public:
+    int r;
+    void getVal()
+    {
+        cout << "enter the radius";
+        cin >> this->r;
+    }
+    double calcArea()
+    {
+        return 3.14 * (this->r) * (this->r);
+    }
+};
+int main()
+{
+    Circle c;
+    c.getVal();
+    double val = c.calcArea();
+    cout << "area of the circle is " << val;
+}

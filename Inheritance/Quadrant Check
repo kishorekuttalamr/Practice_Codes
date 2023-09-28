@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class Point
+{
+public:
+    int x, y;
+    void getdata()
+    {
+        cout << "enter x value" << endl;
+        cin >> x;
+        cout << "enter y value" << endl;
+        cin >> y;
+    }
+    void checkquadrant()
+    {
+        if (x > 0)
+        {
+            if (y > 0)
+            {
+                cout << "First Quadrant";
+            }
+            else
+            {
+                cout << "Second Quadrant";
+            }
+        }
+        else
+        {
+            if (y > 0)
+            {
+                cout << "Fourth quadrant";
+            }
+            else
+            {
+                cout << "Third Quadrant";
+            }
+        }
+    }
+};
+int main()
+{
+    Point p;
+    p.getdata();
+    p.checkquadrant();
+}

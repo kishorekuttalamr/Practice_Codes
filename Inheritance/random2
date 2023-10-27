@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class person{
+  public:
+    void display()
+    {
+        cout<<"i am"<<endl;
+    }
+};
+class student:public person{
+    public:
+        void display()
+        {
+            cout<<"name"<<endl;
+        }
+};
+int main()
+{
+    person * p,t;
+    
+    // p->display();
+    student s;
+    p=&s;
+    t.display();
+}

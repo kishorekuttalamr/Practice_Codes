@@ -1,0 +1,45 @@
+    #include<iostream>
+    using namespace std;
+    class Shape{
+        public: 
+            virtual int area()=0;
+            void setWidth(int w)
+            {
+                width=w;
+            }
+            void setHeight(int h)
+            {
+                height=h;
+            }
+        protected:
+            int width,height;        
+    };
+    class rectangle:public Shape{
+        public:
+            int area()
+            {
+                return width*height;
+            }
+            
+    };
+    class triangle:public Shape{
+        public:
+            int area()
+            {
+                return (width*height)/2;
+            }
+    };
+    int main()
+    {
+        Shape *s;
+        rectangle R;
+        triangle T;
+        s=&R;
+        s->setHeight(5);
+        s->setWidth(10);
+        cout<<"area of rectangle :" <<s->area()<<endl;
+        s=&T;
+        s->setWidth(10);
+        s->setHeight(5);
+        cout<<"area of triangle :"<<s->area()<<endl;
+    }
